@@ -24,5 +24,5 @@ public final class Constants {
     public static final int kDriverControllerPort = 0;
   }
 
-  public static final double fireDelayTime = 1.0;
+  public static final double fireDelayTime = 0.1;
 }
