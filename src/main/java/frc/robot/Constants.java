@@ -16,10 +16,10 @@ public final class Constants {
 
   //CAN IDs
   public static final int pneumaticControlCanID = 0;
-  public static final int leftFrontDriveMotorPort = 1;
-  public static final int leftBackDriveMotorPort = 2;
-  public static final int rightFrontDriveMotorPort = 3;
-  public static final int rightBackDriveMotorPort = 4;
+  public static final int leftFrontDriveMotorPort = 2;
+  public static final int leftBackDriveMotorPort = 3;
+  public static final int rightFrontDriveMotorPort = 0;
+  public static final int rightBackDriveMotorPort = 1;
 
 
   public static final double DeadzoneDefault = 0.03;
