@@ -5,6 +5,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -14,7 +15,7 @@ import frc.robot.Globals;
 public class LauncherSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
   private final Compressor pneumaticControl = new Compressor(Constants.pneumaticControlCanID, PneumaticsModuleType.CTREPCM);
-  final private Solenoid launcherCylinder = new Solenoid(Constants.pneumaticControlCanID, PneumaticsModuleType.CTREPCM, Constants.launcherSolenoidChannel);
+  final private DoubleSolenoid launcherCylinder = new DoubleSolenoid(Constants.pneumaticControlCanID, PneumaticsModuleType.CTREPCM, Constants.launcherSolenoidOutChannel, Constants.launcherSolenoidInChannel);
 
   public enum Mode {
     FIRE,
@@ -27,12 +28,12 @@ public class LauncherSubsystem extends SubsystemBase {
   public void launch(Mode mode) {
     switch (mode) {
       case FIRE:
-        launcherCylinder.set(true);
+        launcherCylinder.set(Value.kForward);
         SmartDashboard.putString("Launcher Status: ", "Launching!");
         break;
       case OFF:
-        launcherCylinder.set(false);
-        SmartDashboard.putString("Launcher Status: ", "Stopping!");
+        launcherCylinder.set(Value.kReverse);
+        SmartDashboard.putString("Launcher Status: ", "Reversing!");
         break;
     }
   }
