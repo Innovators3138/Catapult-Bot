@@ -31,7 +31,7 @@ public final class Constants {
     public static final int kDriverControllerPort = 0;
   }
 
-  public static final double fireDelayTime = 0.1;
+  public static final double fireDelayTime = 0.04;
 
   public static DriveMode SlowMode = new DriveMode.Builder("SlowMode")
   .maxLinAccel(0.025)
