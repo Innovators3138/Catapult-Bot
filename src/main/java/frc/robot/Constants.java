@@ -25,7 +25,8 @@ public final class Constants {
   public static final double DeadzoneDefault = 0.03;
 
   //Solenoid Configuration IDs
-  public static final int launcherSolenoidChannel = 0;
+  public static final int launcherSolenoidOutChannel = 0;
+  public static final int launcherSolenoidInChannel = 1;
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
   }
